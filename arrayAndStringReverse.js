@@ -30,23 +30,14 @@
 
 function reverse(inputForReversal) {
   let length = inputForReversal.length;
-  let reversed;
 
-  if (Array.isArray(inputForReversal)) {
-    reversed = [];
-  } else {
-    reversed = '';
-  }
+  let reversed = [];
 
   for (let index = length - 1; index >= 0; index -= 1) {
-    if (Array.isArray(reversed)) {
-      reversed.push(inputForReversal[index]);
-    } else {
-      reversed += inputForReversal[index];
-    }
+    reversed.push(inputForReversal[index]);
   }
 
-  return reversed;
+  return Array.isArray(inputForReversal) ? reversed : reversed.join('');
 }
 
 // TESTS
